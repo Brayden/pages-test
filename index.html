@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Placeholder Page</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Optional local stylesheet (kept minimal per no raw CSS rule) -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="h-full bg-gradient-to-br from-slate-50 to-slate-200 text-slate-800">
+    <div class="min-h-full flex flex-col">
+      <!-- Header -->
+      <header class="w-full border-b border-slate-200 bg-white/70 backdrop-blur">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+          <h1 class="text-lg font-semibold tracking-tight">Placeholder App</h1>
+          <div class="flex items-center gap-2">
+            <span class="text-sm text-slate-500">Dark</span>
+            <button id="themeToggle" class="inline-flex items-center rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 active:scale-[.98] transition">
+              Toggle
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main -->
+      <main class="flex-1">
+        <div class="max-w-4xl mx-auto px-4 py-10">
+          <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center font-semibold">✓</div>
+              <div>
+                <h2 class="text-xl font-semibold">It works!</h2>
+                <p class="text-sm text-slate-600">This is a basic Tailwind placeholder page for quick testing.</p>
+              </div>
+            </div>
+
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-lg border border-slate-200 p-4">
+                <p class="text-xs uppercase tracking-wide text-slate-500">Environment</p>
+                <p class="mt-1 text-slate-700">Static HTML + Tailwind CDN</p>
+              </div>
+              <div class="rounded-lg border border-slate-200 p-4">
+                <p class="text-xs uppercase tracking-wide text-slate-500">Status</p>
+                <p class="mt-1 text-emerald-600 font-medium">OK</p>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <a href="#" class="inline-flex items-center gap-2 rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                <span>Primary Action</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="w-full border-t border-slate-200 bg-white/70 backdrop-blur">
+        <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-slate-500 flex items-center justify-between">
+          <span>© <span id="year"></span> Placeholder</span>
+          <span>Built with Tailwind</span>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Set current year and basic dark mode toggling
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const html = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+      btn.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        document.body.classList.toggle('bg-slate-900');
+        document.body.classList.toggle('text-slate-100');
+      });
+    </script>
+  </body>
+</html>
